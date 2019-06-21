@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Filetags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @filetags.each do |filetag| %>
+      <tr>
+        <td><%= filetag.filename %></td>
+        <td><%= filetag.tag %></td>
+        <td><%= link_to 'Show', filetag %></td>
+        <td><%= link_to 'Edit', edit_filetag_path(filetag) %></td>
+        <td><%= link_to 'Destroy', filetag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Filetag', new_filetag_path %>

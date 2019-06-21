@@ -1,0 +1,42 @@
+<%= form_with(model: needle, local: true) do |form| %>
+  <% if needle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(needle.errors.count, "error") %> prohibited this needle from being saved:</h2>
+
+      <ul>
+      <% needle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :houhou %>
+    <%= form.text_field :houhou, id: :needle_houhou %>
+  </div>
+
+  <div class="field">
+    <%= form.label :houhou_eng %>
+    <%= form.text_field :houhou_eng, id: :needle_houhou_eng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :basho %>
+    <%= form.text_field :basho, id: :needle_basho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :basho_eng %>
+    <%= form.text_field :basho_eng, id: :needle_basho_eng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.text_field :cost, id: :needle_cost %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

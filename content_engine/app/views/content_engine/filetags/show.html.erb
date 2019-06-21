@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @filetag.filename %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @filetag.tag %>
+</p>
+
+<%= link_to 'Edit', edit_filetag_path(@filetag) %> |
+<%= link_to 'Back', filetags_path %>

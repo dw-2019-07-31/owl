@@ -1,0 +1,82 @@
+﻿.ImeOn
+{
+	ime-mode:active 
+}
+.ImeOff
+{
+	ime-mode:disabled 
+}
+body
+{
+}
+.kpn_title
+{
+    font-family: "メイリオ", sans-serif;
+    font-size: 16px;
+}
+.kpn_font
+{
+    font-family: "メイリオ", sans-serif;
+    font-size: 10px;
+}
+.kpn_th
+{
+    font-family: "メイリオ", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #2C7CFF;
+    color: #FFFFFF;
+}
+.kpn_td
+{
+    font-family: "メイリオ", sans-serif;
+    font-size: 10px;
+    font-weight:100;
+}
+
+.dw_title
+{
+    font-family: "メイリオ", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+.dw_body
+{
+    font-family: "メイリオ", sans-serif;
+    font-size: 14px;
+}
+.dw_control
+{
+    font-family: "メイリオ", sans-serif;
+    font-size: 12px;
+}
+.dw_th
+{
+    font-family: "メイリオ", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #2C7CFF;
+    color: #FFFFFF;
+}
+.dw_td
+{
+    font-family: "メイリオ", sans-serif;
+    font-size: 10px;
+    font-weight:100;
+}
+.dw_hidden
+{
+    display: none;
+}
+
+.readOnly
+{
+    background-color: lightgray;
+}
+@media print{
+    .menu {
+        display: none;
+    }
+}

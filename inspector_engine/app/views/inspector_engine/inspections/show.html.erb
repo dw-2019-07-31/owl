@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @inspection.code %>
+</p>
+
+<p>
+  <strong>Houhou:</strong>
+  <%= @inspection.houhou %>
+</p>
+
+<p>
+  <strong>Houhou eng:</strong>
+  <%= @inspection.houhou_eng %>
+</p>
+
+<p>
+  <strong>Basho:</strong>
+  <%= @inspection.basho %>
+</p>
+
+<p>
+  <strong>Basho eng:</strong>
+  <%= @inspection.basho_eng %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @inspection.cost %>
+</p>
+
+<%= link_to 'Edit', edit_inspection_path(@inspection) %> |
+<%= link_to 'Back', inspections_path %>

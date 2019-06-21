@@ -1,0 +1,40 @@
+<div class="container">
+<%= form_tag @path_string, method: :get do %>
+
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="status">ステータス</span>
+            </div>
+            <%= select_tag :status, options_for_select(['検討中', '登録済', '登録中', '非取扱', '取扱']), class: 'form-control', describedby: "status", multiple: true %>
+        </div>
+
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="brand_name">ブランド</span>
+            </div>
+            <%= select_tag :brand_name, params["brand_name"], class: 'form-control', describedby: "brand_name", multiple: true %>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="contact_person_at_ott">海外営業担当</span>
+            </div>
+            <%= text_field_tag :contact_person_at_ott, params["contact_person_at_ott"], class: 'form-control', describedby: "contact_person_at_ott" %>
+        </div>
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="tentative_item_name">仮商品名</span>
+            </div>
+            <%= text_field_tag :tentative_item_name, params["tentative_item_name"], class: 'form-control', describedby: "tentative_item_name" %>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+        <%= submit_tag '検索', class: 'btn btn-primary col-8' %>
+    </div>
+<% end %>
+</div>

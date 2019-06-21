@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Needles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Houhou</th>
+      <th>Houhou eng</th>
+      <th>Basho</th>
+      <th>Basho eng</th>
+      <th>Cost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @needles.each do |needle| %>
+      <tr>
+        <td><%= needle.houhou %></td>
+        <td><%= needle.houhou_eng %></td>
+        <td><%= needle.basho %></td>
+        <td><%= needle.basho_eng %></td>
+        <td><%= needle.cost %></td>
+        <td><%= link_to 'Show', needle %></td>
+        <td><%= link_to 'Edit', edit_needle_path(needle) %></td>
+        <td><%= link_to 'Destroy', needle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Needle', new_needle_path %>

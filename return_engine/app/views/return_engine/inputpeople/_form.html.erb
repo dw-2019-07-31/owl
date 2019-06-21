@@ -1,0 +1,22 @@
+<%= form_with(model: inputperson, local: true) do |form| %>
+  <% if inputperson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inputperson.errors.count, "error") %> prohibited this inputperson from being saved:</h2>
+
+      <ul>
+      <% inputperson.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :inputperson_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

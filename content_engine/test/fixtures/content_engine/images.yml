@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% file_path = Rails.root.join('test', 'fixtures', 'imagefiles') %>
+
+one:
+  code: MyString
+  filename: 'testimage'
+  extension: '.jpg'
+  imagefile: <%= file_path.join('content_engine', 'testimage.jpg') %>
+
+
+# two:
+#   code: MyString
+#   filename: MyString
+#   extension: MyString
+#   imagefile: 

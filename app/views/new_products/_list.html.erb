@@ -1,0 +1,31 @@
+<div class="container">
+<table class="table table-striped" id="tbl">
+  <thead>
+    <tr>
+      <th>ステータス</th>
+      <th>展開時期</th>
+      <th>ブランド名</th>
+      <th>海外営業担当</th>
+      <th>仮商品名</th>
+      <th>進捗率</th>
+      <th>イメージ</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @new_products.each do |new_product| %>
+      <tr>
+        <td class="d-md-table-cell d-none"><%= new_product["status"] %></td>
+        <td class="d-md-table-cell d-none"><%= new_product["launch_month"] %></td>
+        <td class="d-md-table-cell d-none"><%= new_product["brand_name"] %></td>
+        <td class="d-md-table-cell d-none"><%= new_product["contact_person_at_ott"] %></td>
+        <td class="d-md-table-cell d-none"><%= new_product["tentative_item_name"] %></td>
+        <td class="d-md-table-cell d-none"><%= new_product["percent_complete"] %></td>
+        <td class="d-md-table-cell d-none"><%= new_product["image_path"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+
+</table>
+</div>

@@ -1,0 +1,39 @@
+<!-- filter list　の処理をそのままコピペしているので、なんとかする -->
+<h1>Barcode</h1>
+
+<%= render 'filter', path_string: products_barcode_path %>
+
+<div class="container">
+<table class="table table-striped" id="tbl">
+  <thead>
+    <tr>
+      <th>品番</th>
+      <th>商品名</th>
+      <th class="d-md-table-cell d-none">規格</th>
+      <th>JANコード</th>
+      <th class="d-md-table-cell d-none">ブランド</th>
+      <th class="d-md-table-cell d-none">Status</th>
+      <th class="d-md-table-cell d-none">バーコード</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td id="<%= product.code %>" class="code d-none"><%= product.code %></td>
+        <td id="<%= product.code %>" class="link"><%= link_to product.code, product_path(product.code) %></td>
+        <td id="<%= product.code %>" class="hinnma"></td>
+        <td id="<%= product.code %>" class="hinnmb d-md-table-cell d-none"></td>
+        <td id="<%= product.code %>" class="jsjancd"></td>
+        <td id="<%= product.code %>" class="hinclbid d-md-table-cell d-none"></td>
+        <td id="<%= product.code %>" class="hinstscd d-md-table-cell d-none"></td>
+        <td id="<%= product.code %>" class="barcode d-md-table-cell d-none"></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'pagenate' %>
+
+</div>

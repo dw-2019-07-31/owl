@@ -1,0 +1,35 @@
+<h1>品目別倉庫別在庫データ</h1>
+
+<div class="container">
+<%= form_tag stocks_download_csv_path, method: :get do %>
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="soucd-label">倉庫</span>
+            </div>
+            <%= select_tag :soucd, params["soucd"], class: 'form-control souko', describedby: "soucd-label", multiple: true %>
+        </div>
+
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="hinstscd-label">ブランド</span>
+            </div>
+            <%= select_tag :hinclbid, params["hinclbid"], class: 'form-control brand', describedby: "hinclbid-label", multiple: true %>
+        </div>
+    </div>
+
+    <div class="row col-8 mb-1">
+        <%= check_box_tag :except, 1, true, class: 'form-check-input' %>
+        <%= label_tag :except, "現在庫数、受注引当数、セット品引当数、フリー在庫数が全てゼロのデータは除く", class: 'form-check-label' %>
+    </div>
+
+    <div class="row col-8 mb-1">
+        <%= check_box_tag :prefix, 1, false, class: 'form-check-input' %>
+        <%= label_tag :prefix, "倉庫コードに接頭字を付与する。", class: 'form-check-label' %>
+    </div>
+
+    <div class="row mb-1 ">
+      <%= button_to 'CSVダウンロード', {:action => 'csv' }, class: 'btn btn-primary col-8 container' %>
+    </div>
+<% end %>
+</div>

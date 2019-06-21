@@ -1,0 +1,40 @@
+<%= form_for(@image) do |f| %>
+
+  <div class="container">
+    
+    <div class="row"> 
+
+      <div class="input-group col-md-7 mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-info text-white" id="code">品番</span>
+        </div>
+        <%= f.text_field :code, class: 'form-control', describedby: "code" %>
+      </div>
+
+      <div class="input-group col-md-5 mb-3">
+        <div class="input-group-prepend">
+          <%= f.file_field :upload_file,class:"form-control bg-info text-white" %>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="row"> 
+
+      <div class="input-group col-md-10 mb-6">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-info text-white" id="tag">タグ</span>
+        </div>
+        <input id="tags" class="form-control" describedby="code" name="filetag[tags]" type="text" value="<%= @tagtext %>">
+      </div>
+    
+    </div>
+    <p>タグはカンマ( , )区切りで複数登録できます。</p>
+
+    <div class="row justify-content-center mb-3">
+      <%= f.submit "Upload", class:"actions btn btn-warning col-8" %>
+    </div>  
+
+  </div>
+
+<% end %>

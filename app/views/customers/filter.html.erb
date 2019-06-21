@@ -1,0 +1,11 @@
+<h1>Customer Search</h1>
+<%= render 'filter', path_string: customers_filter_path %>
+<%= render 'list' %>
+
+
+<% unless @customers.blank? %>
+    <div class="row justify-content-center">
+        <%= will_paginate(@customers, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, 
+            previous_label: '＜前ページ', next_label: '次ページ＞') %>
+    </div>
+<% end %>

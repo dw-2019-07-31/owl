@@ -1,0 +1,11 @@
+<h1>返品履歴</h1>
+<% @path_string = returnlogs_filter_path %>
+<%= render 'filter' %>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <%= link_to '新規作成', new_returnlog_path, class: 'btn btn-warning col-8' %>
+    </div>
+</div>
+
+<%= render 'list' %>

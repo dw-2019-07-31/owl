@@ -1,0 +1,33 @@
+<div class="container float-left">
+<%= form_tag stocks_byitem_path, method: :get do %>
+    <div class="row">
+      <div class="input-group col-md-3 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="hincd-label">品目コード</span>
+        </div>
+        <%= text_field_tag :hincd, params["hincd"], class: 'form-control', describedby: "hincd-label" %>
+      </div>
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="hinnm-label">商品名</span>
+        </div>
+        <%= text_field_tag :hinnm, @hinnm, class: 'form-control', describedby: "hinnm-label",:readonly => true %>
+      </div>
+      <div class="input-group col-md-2 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="hinstscd-label">ステータス</span>
+        </div>
+        <%= text_field_tag :hinstscd, @hinstscd, class: 'form-control', describedby: "hinstscd-label",:readonly => true %>
+      </div>
+      <div class="input-group col-md-3 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="hinstsnm-label">ステータス名</span>
+        </div>
+        <%= text_field_tag :hinstsnm, @hinstsnm, class: 'form-control', describedby: "hinstsnm-label",:readonly => true %>
+      </div>
+    </div>
+    <div class="row container float-left">
+      <%= submit_tag '検索', class: 'btn btn-primary col-2 mb-1' %>
+    </div>
+<% end %>
+</div>

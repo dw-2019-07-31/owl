@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>着荷日:</strong>
+  <%= @returnlog.arrived_date %>
+</p>
+
+<p>
+  <strong>配送業者:</strong>
+  <%= @returnlog.delivery_trader %>
+</p>
+
+<p>
+  <strong>荷主コード:</strong>
+  <%= @returnlog.owner_code %>
+</p>
+
+<p>
+  <strong>お客様名:</strong>
+  <%= @returnlog.owner_name %>
+</p>
+
+<p>
+  <strong>締日:</strong>
+  <%= @returnlog.cutoff_date %>
+</p>
+
+<p>
+  <strong>営業担当:</strong>
+  <%= @returnlog.sales_person %>
+</p>
+
+<p>
+  <strong>問い合わせ貨物番号:</strong>
+  <%= @returnlog.inquiry_no %>
+</p>
+
+<p>
+  <strong>小口数:</strong>
+  <%= @returnlog.boxes_count %>
+</p>
+
+<p>
+  <strong>ピース数:</strong>
+  <%= @returnlog.peace_count %>
+</p>
+
+<p>
+  <strong>返品作業日:</strong>
+  <%= @returnlog.returned_date %>
+</p>
+
+<p>
+  <strong>作業者:</strong>
+  <%= @returnlog.input_person %>
+</p>
+
+<p>
+  <strong>備考:</strong>
+  <%= @returnlog.note %>
+</p>
+
+<p>
+  <strong>返品確認書:</strong>
+  <%= @returnlog.return_book %>
+</p>
+
+<p>
+  <strong>作業進捗:</strong>
+  <%= @returnlog.status %>
+</p>
+
+<%= link_to 'Edit', edit_returnlog_path(@returnlog) %> |
+<%= link_to 'Back', returnlogs_path %>

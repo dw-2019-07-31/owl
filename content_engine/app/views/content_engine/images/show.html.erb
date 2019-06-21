@@ -1,0 +1,53 @@
+<%= form_for(@image) do |f| %>
+
+  <h1>商品画像詳細</h1>
+
+  <div class="container">
+
+    <div class="row"> 
+      <div class="input-group col-md-12 mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-info text-white" id="code">品番</span>
+        </div>
+        <%= f.text_field :code, type:"text", readonly:"true", class:"form-control", describedby:"code" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group col-md-6 mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-info text-white" id="code">ファイル名</span>
+        </div>
+        <%= f.text_field :filename, type:"text", readonly:"true", class:"form-control", describedby:"code" %>
+      </div>
+      <div class="input-group col-md-6 mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-info text-white" id="code">拡張子</span>
+        </div>
+        <%= f.text_field :extension, type:"text", readonly:"true", class:"form-control", describedby:"code" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group col-md-12 mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-info text-white" id="code">画像</span>
+        </div>
+        <%= link_to image_tag(imageonly_image_path(@image), :size => "300x300", class:"img-responsive border"), imageonly_image_path(@image) %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="input-group col-md-12 mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-info text-white" id="code">タグ</span>
+        </div>
+        <input type="text" readonly="readonly" class="form-control" describedby="code" value="<%= @tagtext %>">
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

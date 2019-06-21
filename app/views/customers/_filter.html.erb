@@ -1,0 +1,33 @@
+<div class="container">
+<%= form_tag @path_string, method: :get do %>
+
+    <div class="row mb-1">
+        <div class="input-group col-md-6 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="toknm">得意先名</span>
+            </div>
+            <%= text_field_tag :toknm, params["toknm"], class: 'form-control', describedby: "toknm" %>
+        </div>
+        <div class="input-group col-md-6 container">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="nhsnm">納品先名</span>
+            </div>
+            <%= text_field_tag :nhsnm, params["nhsnm"], class: 'form-control', describedby: "nhsnm" %>
+        </div>
+    </div>
+
+    <div class="row col-8 mb-1">
+        <%= check_box_tag :address, 1, !(params[:address].nil?), class: 'form-check-input' %>
+        <%= label_tag :address, "住所、電話番号を表示する", class: 'form-check-label' %>
+    </div>
+
+    <div class="row col-8 mb-1">
+        <%= check_box_tag :kana, 1, !(params[:kana].nil?), class: 'form-check-input' %>
+        <%= label_tag :kana, "カナを表示する", class: 'form-check-label' %>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+        <%= submit_tag '検索', class: 'btn btn-primary col-8' %>
+    </div>
+<% end %>
+</div>

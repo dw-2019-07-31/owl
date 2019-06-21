@@ -1,0 +1,116 @@
+<%= form_with(model: returnlog, local: true) do |form| %>
+  <% if returnlog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(returnlog.errors.count, "error") %> prohibited this returnlog from being saved:</h2>
+
+      <ul>
+      <% returnlog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<script type="text/javascript">
+  $(function () {
+      $('#datetimepicker1').datetimepicker({
+          format: 'L'
+      });
+      $('#datetimepicker2').datetimepicker({
+          format: 'L'
+      });
+      $('#datetimepicker3').datetimepicker({
+          format: 'L'
+      });
+  });
+</script>
+
+  <div class="input-group col-md-4 mb-1 form-group">
+    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+      <%= form.label '着荷日' %>
+      <%= form.text_field :arrived_date,  {:class => 'form-control datetimepicker-input', "data-target" => "#datetimepicker1" } %>
+      <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label '配送業者' %>
+    <%= form.select :delivery_trader , options_from_collection_for_select(@deliverytraders,:name, :name) %>
+  </div>
+ 
+  <div class="field">
+    <%= form.label '荷主コード' %>
+    <%= form.text_field :owner_code, id: :returnlog_owner_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'お客様名' %>
+    <%= form.text_field :owner_name, id: :returnlog_owner_name %>
+  </div>
+
+  <div class="input-group col-md-4 mb-1 form-group">
+    <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+      <%= form.label '締日' %>
+      <%= form.text_field :cutoff_date,  {:class => 'form-control datetimepicker-input', "data-target" => "#datetimepicker2" } %>
+      <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label '営業担当' %>
+    <%= form.text_field :sales_person, id: :returnlog_sales_person %>
+  </div>
+
+  <div class="field">
+    <%= form.label '問合せ貨物番号' %>
+    <%= form.text_field :inquiry_no, id: :returnlog_inquiry_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label '小口数' %>
+    <%= form.text_field :boxes_count, id: :returnlog_boxes_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'ピース数' %>
+    <%= form.text_field :peace_count, id: :returnlog_peace_count %>
+  </div>
+
+  <div class="input-group col-md-4 mb-1 form-group">
+    <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+      <%= form.label '返品作業日' %>
+      <%= form.text_field :returned_date,  {:class => 'form-control datetimepicker-input', "data-target" => "#datetimepicker3" } %>
+      <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+          <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label '作業者' %>
+    <%= form.select :input_person , options_from_collection_for_select(@inputpeople,:name, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label '備考' %>
+    <%= form.text_field :note, id: :returnlog_note %>
+  </div>
+
+  <div class="field">
+    <%= form.label '返品確認書' %>
+    <%= form.select :return_book , options_from_collection_for_select(@returnbooks,:name, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label '作業進捗' %>
+    <%= form.select :status , options_from_collection_for_select(@statuses,:name, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

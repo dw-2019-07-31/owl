@@ -1,0 +1,36 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+<h1>Images</h1>
+ 
+
+<div class="container">
+  <table class="table table-striped" id="tbl">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Filename</th>
+        <th>extension</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @images.each do |image| %>
+        <tr>
+          <td><%= image.code %></td>
+          <td><%= image.filename %></td>
+          <td><%= image.extension %></td>
+          <td class="d-md-table-cell d-block"><%= link_to 'Show', image %></td>
+          <td class="d-md-table-cell d-block"><%= link_to 'Edit', edit_image_path(image) %></td>
+          <td class="d-md-table-cell d-block"><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="row justify-content-center">
+    <%= will_paginate(@images, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer,
+      previous_label: '＜前ページ', next_label: '次ページ＞', class:'col-8') %>
+    <br>
+    <%= link_to 'New Image', new_image_path, class: 'btn btn-warning col-8' %>
+  </div>
+</div>

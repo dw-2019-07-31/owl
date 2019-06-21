@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  arrived_date: MyString
+  delivery_trader: MyString
+  owner_code: MyString
+  owner_name: MyString
+  cutoff_date: MyString
+  sales_person: MyString
+  inquiry_no: MyString
+  boxes_count: MyString
+  peace_count: MyString
+  returned_date: MyString
+  input_person: MyString
+  note: MyString
+  return_book: MyString
+  status: MyString
+
+two:
+  arrived_date: MyString
+  delivery_trader: MyString
+  owner_code: MyString
+  owner_name: MyString
+  cutoff_date: MyString
+  sales_person: MyString
+  inquiry_no: MyString
+  boxes_count: MyString
+  peace_count: MyString
+  returned_date: MyString
+  input_person: MyString
+  note: MyString
+  return_book: MyString
+  status: MyString

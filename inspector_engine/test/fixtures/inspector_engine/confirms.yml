@@ -1,0 +1,34 @@
+confirm1:
+  houhou: 触診
+  houhou_eng: Examination by touch
+confirm2:
+  houhou: 目視
+  houhou_eng: Visual Check
+confirm3:
+  houhou: 目視、触診
+  houhou_eng: Visual Check, examination by touch
+confirm4:
+  houhou: 手動
+  houhou_eng: manual operation
+confirm5:
+  houhou: 指差し
+  houhou_eng: Pointing
+confirm6:
+  houhou: 目視、聴診
+  houhou_eng: Visual Check, Sound Check
+confirm7:
+  houhou: 目視、触診、聴診
+  houhou_eng: Visual Check, Examination by touch, Sound Check
+confirm8:
+  houhou: 聴診
+  houhou_eng: Sound Check
+confirm9:
+  houhou: 個別
+  houhou_eng: Visual inspection
+confirm10:
+  houhou: 聴診、触診
+  houhou_eng: Examination by touch, Sound Check
+confirm11:
+  houhou: 引っ張り
+  houhou_eng: Examination by pulling
+  

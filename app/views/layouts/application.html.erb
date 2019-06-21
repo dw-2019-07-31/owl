@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <title>OWL</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+      <a class="navbar-brand" href="#">OWL</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <% if user_signed_in? %>
+        <div class="collapse navbar-collapse" id="Navber">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= main_app.root_path %>">ホーム <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                商品管理
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="<%= main_app.products_path %>">商品一覧</a>
+                <a class="dropdown-item" href="<%= main_app.products_filter_path %>">商品検索</a>
+                <a class="dropdown-item" href="<%= main_app.new_products_filter_path %>">新商品検索</a>
+                <a class="dropdown-item" href="<%= main_app.products_barcode_path %>">バーコード表示</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="<%= main_app.new_product_path %>">新商品登録</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                在庫管理
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="<%= main_app.stocks_byitem_path %>">品目別在庫別在庫照会</a>
+                <a class="dropdown-item" href="<%= main_app.stocks_download_path %>">品目別在庫別在庫データ</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                コンテンツ管理
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="<%= contents.images_path %>">画像一覧</a>
+                <a class="dropdown-item" href="<%= contents.filetags_path %>">タグ一覧</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= inspector.forms_inspectionstandard_path %>">検品基準書</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= main_app.customers_filter_path %>">得意先情報検索</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                返品関連
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="<%= returns.returnlogs_filter_path %>">返品履歴</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="<%= returns.returnbooks_path %>">返品確認書マスタ</a>
+                <a class="dropdown-item" href="<%= returns.statuses_path %>">作業進捗マスタ</a>
+                <a class="dropdown-item" href="<%= returns.inputpeople_path %>">作業者マスタ</a>
+                <a class="dropdown-item" href="<%= returns.deliverytraders_path %>">配送業者マスタ</a>
+              </div>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= "ログインユーザ名： " + current_user.email %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <% if current_user.has_role? :admin %>
+                  <a class="dropdown-item text-center" href="<%= main_app.rails_admin_path %>">管理者メニューへ</a>
+                <% end %>
+                <div class="dropdown-divider"></div>
+                <p class="dropdown-item text-center"><%= link_to 'ログアウト', main_app.destroy_user_session_path, method: :delete %></p>
+              </div>
+            </li>
+          <ul>
+        </div>
+      <% end %>
+
+    </nav>
+
+    <% if notice %>
+      <p class="alert alert-primary"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="alert alert-danger"><%= flash[:error] %></p>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

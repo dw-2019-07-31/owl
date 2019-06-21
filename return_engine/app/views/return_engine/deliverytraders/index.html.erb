@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Deliverytraders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deliverytraders.each do |deliverytrader| %>
+      <tr>
+        <td><%= deliverytrader.name %></td>
+        <td><%= link_to 'Show', deliverytrader %></td>
+        <td><%= link_to 'Edit', edit_deliverytrader_path(deliverytrader) %></td>
+        <td><%= link_to 'Destroy', deliverytrader, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deliverytrader', new_deliverytrader_path %>

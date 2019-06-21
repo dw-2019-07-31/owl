@@ -1,0 +1,22 @@
+<%= form_with(model: returnbook, local: true) do |form| %>
+  <% if returnbook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(returnbook.errors.count, "error") %> prohibited this returnbook from being saved:</h2>
+
+      <ul>
+      <% returnbook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :returnbook_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

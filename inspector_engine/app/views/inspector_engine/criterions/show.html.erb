@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item type:</strong>
+  <%= @criterion.item_type %>
+</p>
+
+<p>
+  <strong>Kijun:</strong>
+  <%= @criterion.kijun %>
+</p>
+
+<p>
+  <strong>Houhou:</strong>
+  <%= @criterion.houhou %>
+</p>
+
+<p>
+  <strong>Kijun eng:</strong>
+  <%= @criterion.kijun_eng %>
+</p>
+
+<p>
+  <strong>Houhou eng:</strong>
+  <%= @criterion.houhou_eng %>
+</p>
+
+<%= link_to 'Edit', edit_criterion_path(@criterion) %> |
+<%= link_to 'Back', criterions_path %>

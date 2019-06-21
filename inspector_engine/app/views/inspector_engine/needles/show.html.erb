@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Houhou:</strong>
+  <%= @needle.houhou %>
+</p>
+
+<p>
+  <strong>Houhou eng:</strong>
+  <%= @needle.houhou_eng %>
+</p>
+
+<p>
+  <strong>Basho:</strong>
+  <%= @needle.basho %>
+</p>
+
+<p>
+  <strong>Basho eng:</strong>
+  <%= @needle.basho_eng %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @needle.cost %>
+</p>
+
+<%= link_to 'Edit', edit_needle_path(@needle) %> |
+<%= link_to 'Back', needles_path %>

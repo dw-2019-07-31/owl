@@ -1,0 +1,477 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1>商品情報</h1>
+  <h2>基本情報</h2>
+
+  <div class="container">
+
+    <div class="row">  
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">品目コード</span>
+        </div>
+        <%= form.text_area :code, id:"code", class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">ステータス</span>
+        </div>
+        <textarea readonly class="hinstscd form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">商品名</span>
+        </div>
+        <textarea readonly class="hinnma form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">規格</span>
+        </div>
+        <textarea readonly class="hinnmb form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">品目略称</span>
+        </div>
+        <textarea readonly class="hinrn form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">カナ名（全）</span>
+        </div>
+        <%= form.text_area :kana, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">英語表記名</span>
+        </div>
+        <textarea readonly class="hinenma form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">JANコード_1</span>
+        </div>
+        <textarea readonly class="jsjancd form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">メーカー品番</span>
+        </div>
+        <%= form.text_area :maker_code, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">ジャンルコード</span>
+        </div>
+        <%= form.text_area :genre_code, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">定価（上代）</span>
+        </div>
+        <textarea readonly class="prctk form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">ブランド名</span>
+        </div>
+        <textarea readonly class="hinclbid form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">変更リマーク</span>
+        </div>
+        <%= form.text_field  :change_note, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">発売予定時期</span>
+        </div>
+        <%= form.text_area :sch_release_date, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">フリー在庫数</span>
+        </div>
+        <textarea readonly class="stock form-control alert-secondary" aria-describedby="basic-textarea" id="<%= @product.code %>"></textarea>
+      </div>
+
+    </div>
+
+  </div>
+
+  <h2>商品画像</h2>
+  <div class="container">
+
+    <div class="row">
+      <div class="input-group col-md-12 mb-1">
+        <span class="input-group-text bg-secondary text-white">商品画像</span>
+        <% response = Net::HTTP.get(URI.parse("http://owl.dad-way.local/contents/images/filter?code=#{@product.code}")) %>
+        <% urls = JSON.parse(response) %>
+      </div>
+      
+      <% unless @product.code.nil? %>
+        <% urls.each do |url| %>
+          <%= link_to image_tag(url['url'], class:"img-responsive border",:size => "300x300"),url['url'] %>
+        <% end %>
+      <% end %>
+
+    </div>
+
+  </div>
+
+
+  <h2>仕様</h2>
+  <div class="container">
+
+    <div class="row">
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">サイズ(cm)</span>
+        </div>
+        <%= form.text_area :size, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">パッケージサイズ(cm)</span>
+        </div>
+        <%= form.text_area :package_size, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">重量(g)/Net</span>
+        </div>
+        <%= form.text_area :weight_g, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">ﾊﾟｯｹｰｼﾞ重量(g)/Gross</span>
+        </div>
+        <%= form.text_area :package_weight, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">サイズ追記</span>
+        </div>
+        <%= form.text_area :size_note, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-4 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">使用電池型</span>
+        </div>
+        <%= form.text_area :battery, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+  </div>
+
+  <h2>B to C向け情報</h2>
+
+  <div class="container">
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">キャッチコピー</span>
+        </div>
+        <%= form.text_area :catchcopy, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">ロングコピー</span>
+        </div>
+        <%= form.text_area :catchcopy_long, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">商品コピー箇条書き（半角60字）A</span>
+        </div>
+        <%= form.text_area :catchcopy_sub1, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">商品コピー箇条書き（半角60字）B</span>
+        </div>
+        <%= form.text_area :catchcopy_sub2, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">商品コピー箇条書き（半角60字）C</span>
+        </div>
+        <%= form.text_area :catchcopy_sub3, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">パッケージ／ 取説商品説明</span>
+        </div>
+        <%= form.text_area :discription, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">使用方法</span>
+        </div>
+        <%= form.text_area :usage, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">お手入れ方法</span>
+        </div>
+        <%= form.text_area :care, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">その他説明</span>
+        </div>
+        <%= form.text_area :detailed_description, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">注意事項</span>
+        </div>
+        <%= form.text_area :caution, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">取説等リンク１</span>
+        </div>
+        <%= form.text_area :description_path1, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">取説等リンク２</span>
+        </div>
+        <%= form.text_area :description_path2, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-6 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">対象年齢</span>
+        </div>
+        <%= form.text_area :target_age, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-6 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">アクセサリー</span>
+        </div>
+        <%= form.text_area :accessories, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-6 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">製造</span>
+        </div>
+        <%= form.text_area :manufacture, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-6 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">材質</span>
+        </div>
+        <%= form.text_area :material, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-6 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">原産国</span>
+        </div>
+        <%= form.text_area :country_origin, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+  </div>
+
+  <h2>アウターカートン情報</h2>
+
+  <div class="container">
+
+    <div class="row">  
+
+      <div class="input-group col-md-3 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">入数（pcs）</span>
+        </div>
+        <%= form.text_area :inner_carton, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-3 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">外箱サイズ</span>
+        </div>
+        <%= form.text_area :outer_carton, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-3 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">外箱容積（m³）</span>
+        </div>
+        <%= form.text_area :outer_size, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+      <div class="input-group col-md-3 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">外箱容積（m³）</span>
+        </div>
+        <%= form.text_area :outer_weight, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+  </div>
+
+  <h2>カタログ掲載情報</h2>
+
+  <div class="container">
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-1">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">カタログ掲載有無</span>
+        </div>
+        <%= form.text_area :cataloged, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+    <div class="row">  
+
+      <div class="input-group col-md-12 mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text bg-secondary text-white">カタログコピー</span>
+        </div>
+        <%= form.text_area :catalog_copy, id: :product_code, class:"form-control bg-white" %>
+      </div>
+
+    </div>
+
+</div>
+
+  <div class="row justify-content-center mb-3">
+    <%= form.submit "登録", class:"actions btn btn-warning col-8" %>
+  </div>  
+  
+<% end %>

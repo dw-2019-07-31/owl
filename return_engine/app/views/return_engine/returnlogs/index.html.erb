@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Returnlogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Arrived date</th>
+      <th>Delivery trader</th>
+      <th>Owner code</th>
+      <th>Owner name</th>
+      <th>Cutoff date</th>
+      <th>Sales person</th>
+      <th>Inquiry no</th>
+      <th>Boxes count</th>
+      <th>Peace count</th>
+      <th>Returned date</th>
+      <th>Input person</th>
+      <th>Note</th>
+      <th>Return book</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @returnlogs.each do |returnlog| %>
+      <tr>
+        <td><%= returnlog.arrived_date %></td>
+        <td><%= returnlog.delivery_trader %></td>
+        <td><%= returnlog.owner_code %></td>
+        <td><%= returnlog.owner_name %></td>
+        <td><%= returnlog.cutoff_date %></td>
+        <td><%= returnlog.sales_person %></td>
+        <td><%= returnlog.inquiry_no %></td>
+        <td><%= returnlog.boxes_count %></td>
+        <td><%= returnlog.peace_count %></td>
+        <td><%= returnlog.returned_date %></td>
+        <td><%= returnlog.input_person %></td>
+        <td><%= returnlog.note %></td>
+        <td><%= returnlog.return_book %></td>
+        <td><%= returnlog.status %></td>
+        <td><%= link_to 'Show', returnlog %></td>
+        <td><%= link_to 'Edit', edit_returnlog_path(returnlog) %></td>
+        <td><%= link_to 'Destroy', returnlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Returnlog', new_returnlog_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Criterions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item type</th>
+      <th>Kijun</th>
+      <th>Houhou</th>
+      <th>Kijun eng</th>
+      <th>Houhou eng</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @criterions.each do |criterion| %>
+      <tr>
+        <td><%= criterion.item_type %></td>
+        <td><%= criterion.kijun %></td>
+        <td><%= criterion.houhou %></td>
+        <td><%= criterion.kijun_eng %></td>
+        <td><%= criterion.houhou_eng %></td>
+        <td><%= link_to 'Show', criterion %></td>
+        <td><%= link_to 'Edit', edit_criterion_path(criterion) %></td>
+        <td><%= link_to 'Destroy', criterion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Criterion', new_criterion_path %>

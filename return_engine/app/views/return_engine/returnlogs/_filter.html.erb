@@ -1,0 +1,62 @@
+<script type="text/javascript">
+  $(function () {
+      $('#datetimepicker1').datetimepicker({
+          format: 'L'
+      });
+  });
+</script>
+
+<div class="container">
+<%= form_tag @path_string, method: :get do %>
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="status-label">作業進捗</span>
+            </div>
+            <%= text_field_tag :status, params["status"], class: 'form-control', describedby: "status-label" %>
+        </div>
+
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="owner_name-label">お客様名</span>
+            </div>
+            <%= text_field_tag :owner_name, params["owner_name"], class: 'form-control', describedby: "owner_name-label" %>
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="sales_person-label">担当営業</span>
+            </div>
+            <%= text_field_tag :sales_person, params["sales_person"], class: 'form-control', describedby: "sales_person-label" %>
+        </div>
+        
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="owner_code-label">荷主コード</span>
+            </div>
+            <%= text_field_tag :owner_code, params["owner_code"], class: 'form-control', describedby: "owner_code-label" %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="arrived_date-label">着荷日</span>
+            </div>
+            
+            <div class="input-group-append date" id="datetimepicker1" data-target-input="nearest">
+            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" name="arrived_date" describedby="arrived_date-label" />
+                <span class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+        <%= submit_tag '検索', class: 'btn btn-primary col-8' %>
+    </div>
+<% end %>
+</div>

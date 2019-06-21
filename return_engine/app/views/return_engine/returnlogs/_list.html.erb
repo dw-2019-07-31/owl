@@ -1,0 +1,53 @@
+<div class="container">
+<table class="table table-striped" id="tbl">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>着荷日</th>
+      <th class="d-md-table-cell d-none">配送業者</th>
+      <th>荷主コード</th>
+      <th class="d-md-table-cell d-none">お客様名</th>
+      <th class="d-md-table-cell d-none">締日</th>
+      <th>担当営業</th>
+      <th>問い合わせ貨物番号</th>
+      <th>小口数</th>
+      <th>ピース数</th>
+      <th>返品作業日</th>
+      <th>作業者</th>
+      <th>備考</th>
+      <th>返品確認書</th>
+      <th>ステータス</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @returnlogs.each do |returnlog| %>
+      <tr>
+        <td id="<%= returnlog.id %>" class="code d-none"><%= returnlog.id %></td>
+        <td id="<%= returnlog.id %>" class="link"><%= link_to returnlog.id, returnlog_path(returnlog.id) %></td>
+        <td id="<%= returnlog.arrived_date %>" class="arrived_date"><%= returnlog.arrived_date %></td>
+        <td id="<%= returnlog.delivery_trader %>" class="delivery_trader d-md-table-cell d-none"><%= returnlog.delivery_trader %></td>
+        <td id="<%= returnlog.owner_code %>" class="owner_code"><%= returnlog.owner_code %></td>
+        <td id="<%= returnlog.owner_name %>" class="owner_name"><%= returnlog.owner_name %></td>
+        <td id="<%= returnlog.cutoff_date %>" class="cutoff_date"><%= returnlog.cutoff_date %></td>
+        <td id="<%= returnlog.sales_person %>" class="sales_person"><%= returnlog.sales_person %></td>
+        <td id="<%= returnlog.inquiry_no %>" class="inquiry_no"><%= returnlog.inquiry_no %></td>
+        <td id="<%= returnlog.boxes_count %>" class="boxes_count"><%= returnlog.boxes_count %></td>
+        <td id="<%= returnlog.peace_count %>" class="peace_count"><%= returnlog.peace_count %></td>
+        <td id="<%= returnlog.returned_date %>" class="returned_date"><%= returnlog.returned_date %></td>
+        <td id="<%= returnlog.input_person %>" class="input_person"><%= returnlog.input_person %></td>
+        <td id="<%= returnlog.note %>" class="note"><%= returnlog.note %></td>
+        <td id="<%= returnlog.return_book %>" class="return_book"><%= returnlog.return_book %></td>
+        <td id="<%= returnlog.status %>" class="status"><%= returnlog.status %></td>
+        <td class="d-none-table-cell d-block"><%= link_to 'Show', returnlog_path(returnlog.id) %></td>
+        <td class="d-none-table-cell d-block"><%= link_to 'Edit', edit_returnlog_path(returnlog.id) %></td>
+        <td class="d-none-table-cell d-block"><%= link_to 'Destroy', returnlog_path(returnlog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render 'pagenate' %>
+
+</div>

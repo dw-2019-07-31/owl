@@ -1,0 +1,49 @@
+<div class="container">
+<table class="table table-striped" id="tbl">
+  <thead>
+    <tr>
+      <th scope="col">得意先コード</th>
+      <th scope="col">得意先名</th>
+      <% unless params[:kana].nil? %><th scope="col">得意先カナ</th><% end %>
+      <% unless params[:address].nil? %><th scope="col">得意先住所</th><% end %>
+      <% unless params[:address].nil? %><th scope="col">得意先TEL</th><% end %>
+      <% unless params[:address].nil? %><th scope="col">得意先FAX</th><% end %>
+      <th scope="col">納品先コード</th>
+      <th scope="col">納品先名</th>
+      <% unless params[:kana].nil? %><th scope="col">納品先名カナ</th><% end %>
+      <% unless params[:address].nil? %><th scope="col">納品先住所</th><% end %>
+      <% unless params[:address].nil? %><th scope="col">納品先TEL</th><% end %>
+      <% unless params[:address].nil? %><th scope="col">納品先FAX</th><% end %>
+      <th scope="col">営業担当者</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% unless @customers.blank? %>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td class="d-md-table-cell d-none"><%= customer["tokcd"] %></td>
+          <td class="d-md-table-cell d-none"><%= customer["toknm"] %></td>
+          <% unless params[:kana].nil? %><td class="d-md-table-cell d-none"><%= customer["toknk"] %></td><% end %>
+          <% unless params[:address].nil? %><td class="d-md-table-cell d-none"><%= customer["tokaddr"] %></td><% end %>
+          <% unless params[:address].nil? %><td class="d-md-table-cell d-none"><%= customer["toktl"] %></td><% end %>
+          <% unless params[:address].nil? %><td class="d-md-table-cell d-none"><%= customer["tokfx"] %></td><% end %>
+          <td class="d-md-table-cell d-none"><%= customer["nhscd"] %></td>
+          <td class="d-md-table-cell d-none"><%= customer["nhsnm"] %></td>
+          <% unless params[:kana].nil? %><td class="d-md-table-cell d-none"><%= customer["nhsnk"] %></td><% end %>
+          <% unless params[:address].nil? %><td class="d-md-table-cell d-none"><%= customer["nhsaddr"] %></td><% end %>
+          <% unless params[:address].nil? %><td class="d-md-table-cell d-none"><%= customer["nhstl"] %></td><% end %>
+          <% unless params[:address].nil? %><td class="d-md-table-cell d-none"><%= customer["nhsfx"] %></td><% end %>
+          <td class="d-md-table-cell d-none"><%= customer["mannm"] %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td class="text-center" colspan=13>該当の得意先が見つかりません。</td>
+      </tr>
+    <% end %>
+  </tbody>
+
+
+</table>
+</div>

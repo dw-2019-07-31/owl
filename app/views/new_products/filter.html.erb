@@ -1,0 +1,12 @@
+<h1>New Products Filter</h1>
+<% @path_string = new_products_filter_path %>
+<%= render 'filter' %>
+<%= render 'list' %>
+
+
+<% unless @new_products.blank? %>
+    <div class="row justify-content-center">
+        <%= will_paginate(@new_products, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, 
+            previous_label: '＜前ページ', next_label: '次ページ＞') %>
+    </div>
+<% end %>

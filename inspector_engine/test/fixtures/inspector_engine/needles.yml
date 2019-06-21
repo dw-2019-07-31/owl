@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  houhou: MyString
+  houhou_eng: MyString
+  basho: MyString
+  basho_eng: MyString
+  cost: MyString
+
+two:
+  houhou: MyString
+  houhou_eng: MyString
+  basho: MyString
+  basho_eng: MyString
+  cost: MyString

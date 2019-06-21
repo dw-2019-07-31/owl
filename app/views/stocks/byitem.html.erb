@@ -1,0 +1,37 @@
+<h1>品目別倉庫別在庫照会</h1>
+
+<%= render 'filter' %>
+
+<table class="table table-striped" id="tbl">
+  <thead>
+    <tr>
+      <th>倉庫コード</th>
+      <th>倉庫名</th>
+      <th>現在庫数</th>
+      <th>受注引当数</th>
+      <th>セット品引当数</th>
+      <th>フリー在庫数</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% unless @zaiko_array.nil? %>
+      <% unless @zaiko_array.length == 0 %>
+        <% @zaiko_array.each do |zaiko| %>
+          <tr>
+            <td><%= zaiko.soucd %></td>
+            <td><%= zaiko.sounm %></td>
+            <td><%= zaiko.free_sum %></td>
+            <td><%= zaiko.jdntrb_sum %></td>
+            <td><%= zaiko.sethin_sum %></td>
+            <td><%= zaiko.free %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td class="text-center" colspan=6>該当の商品が見つからないか、在庫がありません。</td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_type: MyString
+  kijun: MyString
+  houhou: MyString
+  kijun_eng: MyString
+  houhou_eng: MyString
+
+two:
+  item_type: MyString
+  kijun: MyString
+  houhou: MyString
+  kijun_eng: MyString
+  houhou_eng: MyString

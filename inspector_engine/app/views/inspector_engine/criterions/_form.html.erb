@@ -1,0 +1,42 @@
+<%= form_with(model: criterion, local: true) do |form| %>
+  <% if criterion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(criterion.errors.count, "error") %> prohibited this criterion from being saved:</h2>
+
+      <ul>
+      <% criterion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :item_type %>
+    <%= form.text_field :item_type, id: :criterion_item_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kijun %>
+    <%= form.text_field :kijun, id: :criterion_kijun %>
+  </div>
+
+  <div class="field">
+    <%= form.label :houhou %>
+    <%= form.text_field :houhou, id: :criterion_houhou %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kijun_eng %>
+    <%= form.text_field :kijun_eng, id: :criterion_kijun_eng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :houhou_eng %>
+    <%= form.text_field :houhou_eng, id: :criterion_houhou_eng %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<div class="container">
+<%= form_tag @path_string, method: :get do %>
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="code-label">コード</span>
+            </div>
+            <%= text_field_tag :code, params["code"], class: 'form-control', describedby: "code-label" %>
+        </div>
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="jsjancd-label">JAN</span>
+            </div>
+            <%= text_field_tag :jsjancd, params["jsjancd"], class: 'form-control', describedby: "jsjancd-label" %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="hinnma-label">品目名</span>
+            </div>
+            <%= text_field_tag :hinnma, params["hinnma"], class: 'form-control', describedby: "hinnma-label" %>
+        </div>
+        
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="hinnmb-label">規格</span>
+            </div>
+            <%= text_field_tag :hinnmb, params["hinnmb"], class: 'form-control', describedby: "hinnmb-label" %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="hinclbid-label">ブランド</span>
+            </div>
+            <%= select_tag :hinclbid, params["hinclbid"], class: 'form-control', describedby: "hinclbid-label", multiple: true %>
+        </div>
+
+        <div class="input-group col-md-6 mb-1">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="hinstscd-label">品目ステータス</span>
+            </div>
+            <%= select_tag :hinstscd, params["hinstscd"], class: 'form-control', describedby: "hinstscd-label", multiple: true %>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+        <%= submit_tag '検索', class: 'btn btn-primary col-8' %>
+    </div>
+<% end %>
+</div>

@@ -1,0 +1,8 @@
+<div class="row justify-content-center">
+  <%= will_paginate(@products, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, 
+    previous_label: '＜前ページ', next_label: '次ページ＞') %>
+  <br>
+</div>
+<div class="row justify-content-center">
+  <%= link_to '新規作成', new_product_path, class: 'btn btn-warning col-8 mb-3' %>
+</div>

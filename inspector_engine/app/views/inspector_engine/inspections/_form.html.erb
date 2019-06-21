@@ -1,0 +1,47 @@
+<%= form_with(model: inspection, local: true) do |form| %>
+  <% if inspection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inspection.errors.count, "error") %> prohibited this inspection from being saved:</h2>
+
+      <ul>
+      <% inspection.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code, id: :inspection_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :houhou %>
+    <%= form.text_field :houhou, id: :inspection_houhou %>
+  </div>
+
+  <div class="field">
+    <%= form.label :houhou_eng %>
+    <%= form.text_field :houhou_eng, id: :inspection_houhou_eng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :basho %>
+    <%= form.text_field :basho, id: :inspection_basho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :basho_eng %>
+    <%= form.text_field :basho_eng, id: :inspection_basho_eng %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.text_field :cost, id: :inspection_cost %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
